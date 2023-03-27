@@ -1,6 +1,6 @@
-import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
-import { Layout, Typography, Space } from "antd";
+import React from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
+import { Layout, Typography, Space } from 'antd';
 
 import {
   Exchanges,
@@ -9,8 +9,8 @@ import {
   Cryptocurrencies,
   CryptoDetails,
   Navbar,
-} from "./components";
-import "./App.css";
+} from './components';
+import './App.css';
 
 const App = () => (
   <div className="app">
@@ -42,13 +42,13 @@ const App = () => (
       <div className="footer">
         <Typography.Title
           level={5}
-          style={{ color: "white", textAlign: "center" }}
+          style={{ color: 'white', textAlign: 'center' }}
         >
           Copyright © {new Date().getFullYear()}
           <a href="https://www.linkedin.com/in/shoaibmoosa/">
-            {" "}
+            {' '}
             Shoaib & Group.
-          </a>{" "}
+          </a>{' '}
           <br />
         </Typography.Title>
         <Space>
