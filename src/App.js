@@ -45,7 +45,7 @@ const App = () => (
           style={{ color: 'white', textAlign: 'center' }}
         >
           Copyright © {new Date().getFullYear()}
-          <a href="https://www.linkedin.com/in/shoaibmoosa/">
+          <a href="">
             {' '}
             Shoaib & Group.
           </a>{' '}
