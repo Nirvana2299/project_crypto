@@ -1,61 +1,23 @@
 import React from 'react';
-// eslint-disable-next-line
-import millify from 'millify';
-// eslint-disable-next-line
-import { Collapse, Row, Col, Typography, Avatar } from 'antd';
-// eslint-disable-next-line
-import HTMLReactParser from 'html-react-parser';
+import './Exchange.css'; // Import CSS file for styling
+// import nftBackground from './nft-background.png'; // Import background image
 
-import { useGetExchangesQuery } from '../services/cryptoApi';
-import Loader from './Loader';
-// eslint-disable-next-line
-const { Text } = Typography;
-// eslint-disable-next-line
-const { Panel } = Collapse;
-
-const Exchanges = () => {
-  const { data, isFetching } = useGetExchangesQuery();
-  // eslint-disable-next-line
-  const exchangesList = data?.data?.exchanges;
- // Note: To access this endpoint you need premium plan
-  if (isFetching) return <Loader />;
-
+ // eslint-disable-next-line
+function Exchanges() {
   return (
-    <>
-      <Row>
-        <Col span={6}>Exchanges</Col>
-        <Col span={6}>24h Trade Volume</Col>
-        <Col span={6}>Markets</Col>
-        <Col span={6}>Change</Col>
-      </Row>
-      <Row>
-        {/* {exchangesList.map((exchange) => (
-          <Col span={24}>
-            <Collapse>
-              <Panel
-                key={exchange.uuid}
-                showArrow={false}
-                header={(
-                  <Row key={exchange.uuid}>
-                    <Col span={6}>
-                      <Text><strong>{exchange.rank}.</strong></Text>
-                      <Avatar className="exchange-image" src={exchange.iconUrl} />
-                      <Text><strong>{exchange.name}</strong></Text>
-                    </Col>
-                    <Col span={6}>${millify(exchange.volume)}</Col>
-                    <Col span={6}>{millify(exchange.numberOfMarkets)}</Col>
-                    <Col span={6}>{millify(exchange.marketShare)}%</Col>
-                  </Row>
-                  )}
-              >
-                {HTMLReactParser(exchange.description || '')}
-              </Panel>
-            </Collapse>
-          </Col>
-        ))} */}
-      </Row>
-    </>
+    <div className="exchange">
+      {/* <div className="exchange__background" style={{ backgroundImage: `url(${nftBackground})` }}></div> */}
+      <div className="exchange__content">
+        <h1 className="exchange__title">NFT Exchange</h1>
+        <p className="exchange__info">
+          {/* eslint-disable-next-line */}
+          Non-fungible tokens (NFTs) are unique digital assets that represent ownership of a specific item, such as artwork or collectibles. NFTs have gained popularity in recent years due to their ability to provide verifiable ownership and scarcity in the digital realm.
+        </p>
+        {/* eslint-disable-next-line */}
+        <button className="exchange__button" onClick={() => window.location.href = 'http://localhost:8080'}>Go to NFT Exchange</button>
+      </div>
+    </div>
   );
-};
+}
 
 export default Exchanges;
